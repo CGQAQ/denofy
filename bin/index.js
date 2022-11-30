@@ -12,12 +12,6 @@ cmd.option(
     process.cwd()
 );
 
-cmd.option(
-    "-e, --entry <entry>",
-    "entry file of the project",
-    path.resolve(process.cwd(), "./index.js")
-);
-
 // node project default is commonjs
 cmd.option("-m, --esm-source", "whether the project is ESM");
 
@@ -39,6 +33,8 @@ cmd.option(
     "-n, --no-inline",
     "whether to use import_map.json instead of inline import map into import statement"
 );
+
+cmd.argument("<entry>", "entry file of the project");
 
 cmd.parse(process.argv);
 
