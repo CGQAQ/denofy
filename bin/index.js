@@ -6,7 +6,7 @@ const cmd = new Command();
 
 cmd.option("-r, --root <root>", "root directory of the project that contains package.json", process.cwd());
 
-cmd.option("-e, --entry <entry>", "entry file of the project", "index.js");
+cmd.option("-e, --entry <entry>", "entry file of the project", path.resolve(process.cwd(), "./index.js"));
 
 cmd.option("-c, --commonjs", "whether the project is commonjs", true);
 
