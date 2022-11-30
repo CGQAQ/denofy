@@ -9,7 +9,6 @@ const denofy = async (options) => {
         entry,
         esmSource: isEsmSource,
         target,
-        module: module_,
         outdir,
         strict,
         noInline,
@@ -35,11 +34,9 @@ const denofy = async (options) => {
     }
 
     if (!target) {
+        // generate code's target
+        // default to latest ecma version
         target = "esnext";
-    }
-
-    if (!module_) {
-        module_ = "esm"; // generate esm or cjs
     }
 
     if (!outdir) {
@@ -47,6 +44,7 @@ const denofy = async (options) => {
     }
 
     if (!strict) {
+        // strict by default
         strict = true;
     }
 
@@ -64,7 +62,7 @@ const denofy = async (options) => {
 
     await bundle.write({
         dir: outdir,
-        format: module_,
+        format: "esm",
         strict,
         preserveModules: true, // Keep directory structure and files
     });

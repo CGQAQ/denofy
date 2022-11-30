@@ -16,11 +16,11 @@ cmd.option(
     path.resolve(process.cwd(), "./index.js")
 );
 
-cmd.option("-M, --esm-source", "whether the project is ESM");
+// node project default is commonjs
+cmd.option("-m, --esm-source", "whether the project is ESM");
 
+// deafult is esnext
 cmd.option("-t, --target <target>", "target of the gen code", "esnext");
-
-cmd.option("-m, --module <module>", "module of the gen code", "esm");
 
 cmd.option(
     "-o, --outdir <outdir>",
