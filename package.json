@@ -1,9 +1,11 @@
 {
     "name": "denofy",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "Convert your node code into deno",
     "main": "src/index.js",
-    "bin": "bin/index.js",
+    "bin": {
+        "denofy": "bin/index.js"
+    },
     "repository": "https://github.com/CGQAQ/denofy.git",
     "author": "CGQAQ <m.jason.liu@outlook.com>",
     "license": "MIT",
