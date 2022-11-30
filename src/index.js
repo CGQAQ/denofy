@@ -14,7 +14,7 @@ const denofy = async (options) => {
         noInline,
     } = options;
     if (!root) {
-        root = __dirname;
+        root = process.cwd();
     }
 
     if (!entry) {

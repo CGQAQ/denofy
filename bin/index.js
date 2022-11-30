@@ -42,14 +42,19 @@ const options = cmd.opts();
 const [entry] = cmd.args;
 options.entry = entry;
 if (typeof options.entry === "string" && !path.isAbsolute(options.entry)) {
-    options.entry = path.resolve(options.outdir, options.entry);
+    options.entry = path.resolve(options.root, options.entry);
 }
+
+const outputEntry = path.resolve(
+    options.outdir,
+    path.relative(process.cwd(), entry)
+);
 
 denofy(options)
     .then(() => {
         console.log("Convert succeed!");
         console.log("Converted files are in", options.outdir);
-        console.log(`try: \n\tdeno run --allow-all ${options.entry}`);
+        console.log(`try: \n\tdeno run --allow-all ${outputEntry}`);
     })
     .catch((err) => {
         console.error(err);
