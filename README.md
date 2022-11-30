@@ -6,13 +6,13 @@
 
 -   Map npm dep `foo` to `npm:foo`
 -   Map node builtins `fs` to `https://deno.land/std/node/fs.ts`
--   gen import_maps.json in `non-inline` mode
--   inject `createRequrie` code from `https://deno.land/std/node/module.ts` in commonjs gen mode
+-   Gen import_maps.json in `non-inline` mode
+-   Inject `createRequrie` code from `https://deno.land/std/node/module.ts` in commonjs gen mode
 -   Keep folder structure and don't minify the code for now
 
 ## TODO
 
--   [ ] support gen node code + import_maps
--   [ ] support gen deno code (inline mode)
--   [ ] support esm gen
--   [ ] support commonjs gen + createRequire (deno commonjs shim mode)
+-   [ ] Support gen node code + import_maps
+-   [ ] Support gen deno code (inline mode)
+-   [ ] Support esm gen
+-   [ ] Support commonjs gen + createRequire (deno commonjs shim mode)
