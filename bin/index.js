@@ -39,10 +39,17 @@ cmd.argument("<entry>", "entry file of the project");
 cmd.parse(process.argv);
 
 const options = cmd.opts();
+const [entry] = cmd.args;
+options.entry = entry;
+if (typeof options.entry === "string" && !path.isAbsolute(options.entry)) {
+    options.entry = path.resolve(options.outdir, options.entry);
+}
 
 denofy(options)
     .then(() => {
         console.log("Convert succeed!");
+        console.log("Converted files are in", options.outdir);
+        console.log(`try: \n\tdeno run --allow-all ${options.entry}`);
     })
     .catch((err) => {
         console.error(err);
