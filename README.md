@@ -22,5 +22,5 @@ yarn start
 
 -   [ ] Support gen node code + import_maps
 -   [ ] Support gen deno code (inline mode)
--   [ ] Support esm gen
--   [ ] Support commonjs gen + createRequire (deno commonjs shim mode)
+-   [x] Support esm gen
+-   [ ] ~~Support commonjs gen + createRequire (deno commonjs shim mode) IMPOSSIBLE~~
