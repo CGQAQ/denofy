@@ -16,7 +16,7 @@ const denofy = async (options) => {
         options = {};
     }
 
-    const {root, entry, isCommonJs, target, module: module_, outdir, strict} = options;
+    let {root, entry, isCommonJs, target, module: module_, outdir, strict} = options;
     if (!root) {
         root = __dirname;
     }
