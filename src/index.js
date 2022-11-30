@@ -3,10 +3,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const denofy = async (options) => {
-    if (!options) {
-        options = {};
-    }
-
+    options = options ?? {};
     let {
         root,
         entry,
