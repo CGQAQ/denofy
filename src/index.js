@@ -27,7 +27,7 @@ const denofy = async (options) => {
 
     if (!isCommonJs) {
         const packageJson = path.join(root, "package.json");
-        if (fs.fstatSync(packageJson).isFile()) {
+        if (fs.existsSync(packageJson)) {
             let content = fs.readFileSync(packageJson, {encoding: "utf-8"});
             content = JSON.parse(content);
             // global isCommonJs: use package.json to determine.
