@@ -54,19 +54,14 @@ const denofy = async (options) => {
 
     const bundle = await rollup.rollup({
         input: entry,
-        plugins: isCommonJs
-            ? [
-                  require("./rollup-plugin-denofy")(),
-                  require("rollup-plugin-node-externals")(),
-                  require("rollup-plugin-node-resolve")(),
-                  require("rollup-plugin-commonjs")(),
-              ]
-            : [
-                  require("./rollup-plugin-denofy")(),
-                  require("rollup-plugin-node-externals")(),
-                  require("rollup-plugin-node-resolve")(),
-              ],
+        plugins: [
+            require("rollup-plugin-node-externals")(),
+            require("rollup-plugin-node-resolve")(),
+            require("rollup-plugin-commonjs")(),
+            require("./rollup-plugin-denofy")(),
+        ],
     });
+
     await bundle.write({
         dir: outdir,
         format: module_,
