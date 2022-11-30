@@ -1,25 +1,25 @@
 {
-  "name": "denofy",
-  "version": "0.0.2",
-  "description": "Convert your node code into deno",
-  "main": "src/index.js",
-  "bin": "bin/index.js",
-  "repository": "https://github.com/CGQAQ/denofy.git",
-  "author": "CGQAQ <m.jason.liu@outlook.com>",
-  "license": "MIT",
-  "keywords": [
-    "deno",
-    "node",
-    "convert"
-  ],
-  "dependencies": {
-    "commander": "^9.4.1",
-    "estree-walker": "^2.0.2",
-    "is-builtin-module": "^3.2.0",
-    "magic-string": "^0.26.7",
-    "rollup": "^3.5.0",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-externals": "^5.0.2",
-    "rollup-plugin-node-resolve": "^5.2.0"
-  }
+    "name": "denofy",
+    "version": "0.1.0",
+    "description": "Convert your node code into deno",
+    "main": "src/index.js",
+    "bin": "bin/index.js",
+    "repository": "https://github.com/CGQAQ/denofy.git",
+    "author": "CGQAQ <m.jason.liu@outlook.com>",
+    "license": "MIT",
+    "keywords": [
+        "deno",
+        "node",
+        "convert"
+    ],
+    "dependencies": {
+        "commander": "^9.4.1",
+        "estree-walker": "^2.0.2",
+        "is-builtin-module": "^3.2.0",
+        "magic-string": "^0.26.7",
+        "rollup": "^3.5.0",
+        "rollup-plugin-commonjs": "^10.1.0",
+        "rollup-plugin-node-externals": "^5.0.2",
+        "rollup-plugin-node-resolve": "^5.2.0"
+    }
 }
