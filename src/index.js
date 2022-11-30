@@ -7,11 +7,12 @@ const denofy = async (options) => {
     let {
         root,
         entry,
-        commonjs: isCommonJs,
+        esmSource: isEsmSource,
         target,
         module: module_,
         outdir,
         strict,
+        noInline,
     } = options;
     if (!root) {
         root = __dirname;
@@ -21,15 +22,15 @@ const denofy = async (options) => {
         entry = path.resolve(root, "./index.js");
     }
 
-    if (!isCommonJs) {
+    if (isEsmSource == null) {
         const packageJson = path.join(root, "package.json");
         if (fs.existsSync(packageJson)) {
             let content = fs.readFileSync(packageJson, { encoding: "utf-8" });
             content = JSON.parse(content);
             // global isCommonJs: use package.json to determine.
-            isCommonJs = content.type !== "module";
+            isEsmSource = content.type == "module";
         } else {
-            isCommonJs = true;
+            isEsmSource = false;
         }
     }
 
@@ -49,13 +50,15 @@ const denofy = async (options) => {
         strict = true;
     }
 
+    noInline = !!noInline;
+
     const bundle = await rollup.rollup({
         input: entry,
         plugins: [
             require("rollup-plugin-node-externals")(),
             require("rollup-plugin-node-resolve")(),
-            require("rollup-plugin-commonjs")(),
-            require("./rollup-plugin-denofy")(),
+            !isEsmSource ? require("rollup-plugin-commonjs")() : null,
+            require("./rollup-plugin-denofy")({ noInline }),
         ],
     });
 

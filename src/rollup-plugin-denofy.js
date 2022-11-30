@@ -25,12 +25,15 @@ const normalizeDep = (mg, node) => {
 
 module.exports = function RollupPluginDenofy(options) {
     options = options || {};
-    let {} = options;
+    let { noInline } = options;
 
     return {
         name: "rollup-plugin-denofy",
 
         renderChunk(code, chunk) {
+            // don't touch import statement in no inline mode
+            if (noInline) return;
+
             if (!chunk.fileName.endsWith(".js")) {
                 return null;
             }
