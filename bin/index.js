@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const denofy = require("../src/index.js");
 const { Command } = require("commander");
 const path = require("node:path");
