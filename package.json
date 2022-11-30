@@ -1,0 +1,9 @@
+{
+  "name": "denofy",
+  "version": "0.0.1",
+  "description": "Convert your node code into deno",
+  "main": "index.js",
+  "repository": "https://github.com/CGQAQ/denofy.git",
+  "author": "CGQAQ <m.jason.liu@outlook.com>",
+  "license": "MIT"
+}
