@@ -1,14 +1,17 @@
 {
-  "name": "exmaple",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "lodash": "^4.17.21"
-  }
+    "name": "exmaple",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "node ../bin/index.js",
+        "run-with-deno": "deno run --allow-all dist/index.js",
+        "build-and-run": "yarn build && yarn run-with-deno",
+        "start": "yarn build-and-run"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "lodash": "^4.17.21"
+    }
 }

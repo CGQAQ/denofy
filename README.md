@@ -2,6 +2,14 @@
 
 ## Still work in progress and a long way to PoC
 
+## See demo (after git clone)
+
+```console
+yarn install
+cd example
+yarn start
+```
+
 ## Idea
 
 -   Map npm dep `foo` to `npm:foo`
